@@ -138,3 +138,7 @@ export function checkColors(foregroundColor, backgroundColor) {
     "backgroundLuma":backgroundLuma
   }
 };
+
+/**
+https://colorcontrast.dev/api/ 
+*/
