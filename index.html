@@ -1,0 +1,102 @@
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="generator">
+        <div class="colour-select">           
+            
+            <!-- Color Picker Input -->
+            <label for="seed-colour">Choose colour </label>
+            <input type="color" id="seed-colour" name="favcolor" value="#ff0000" aria-label="Seed color picker"><br><br>
+            
+            <div class="dropdown">
+                <select class="dropdown-content" name="scheme" id="color-scheme" aria-label="Colour scheme options">
+                    <option>Monochrome</option>
+                    <option>Monochrome-dark</option>
+                    <option>Monochrome-light</option>
+                    <option>Analogic</option>
+                    <option>Complement</option>
+                    <option>Analogic-complement</option>
+                    <option>Triad</option>
+                </select>
+            </div>
+            
+            <button class="colour-scheme" id="scheme-button" aria-label="Generate colour scheme">Get colour scheme</button>
+        </div>
+    
+
+        <div id="the-colours" aria-live="polite">
+            <!-- Color boxes -->
+            <div class="colors" id="c0" aria-label="Colour box 1"></div>
+            <div class="colors" id="c1" aria-label="Colour box 2"></div>
+            <div class="colors" id="c2" aria-label="Colour box 3"></div>
+            <div class="colors" id="c3" aria-label="Colour box 4"></div>
+            <div class="colors" id="c4" aria-label="Colour box 5"></div>
+        </div>
+        <div id="the-hex-code" aria-live="polite">
+            <!-- Hex codes next to each color -->
+            <div class="hex" id="h0" aria-label="HEX code for Colour box 1"></div> 
+            <div class="hex" id="h1" aria-label="HEX code for Colour box 2"></div> 
+            <div class="hex" id="h2" aria-label="HEX code for Colour box 3"></div> 
+            <div class="hex" id="h3" aria-label="HEX code for Colour box 4"></div> 
+            <div class="hex" id="h4" aria-label="HEX code for Colour box 5"></div>
+        </div>
+        <div id="feedback">
+        </div>
+
+        <div class="colour-contrast-checker">
+            <h3>Colour Contrast Checker</h3>
+            <div class="foreground">
+                <div class="foreground-color" id="fC" aria-label="Foreground colour display"></div>
+                <label for="fColour">HEX: </label>
+                    <input type="color" id="fColour" name="fColour" value="#000000" aria-label="Foreground color picker"><br><br>
+                    <input type="text" id="fColour-T" name="fColour" aria-label="Foreground color as text"><br>
+
+                    <label for="fColour">RGB: </label>
+                    <input type="text" id="fColour-R" name="f-RGB" disabled aria-label="Foreground color hex code in RGB"><br>
+
+            </div>
+
+            <div class="background">
+                <div class="background-color" id="bC" aria-label="Background colour display"></div>
+                <label for="bColour">HEX: </label>
+                    <input type="color" id="bColour" name="bColour" value="#ffffff" aria-label="Background color picker"><br><br>
+                    <input type="text" id="bColour-T" name="bColour" aria-label="Background color as text"><br>
+
+                    <label for="bColour">RGB: </label>
+                    <input type="text" id="bColour-R" name="b-RGB" disabled aria-label="Background color hex code in RGB"><br>
+                    
+            </div>
+        </div>
+        <hr width="100%" size="1" color="grey" noshade>
+
+        <div class="contrast-result" aria-live="polite"> 
+            <div class="ratio">
+                <p>Contrast Ratio</p>
+                <p class="result-ratio" id="result-ratio" aria-label="Contrast ratio"></p>
+            </div>
+            <div class="text">
+                <p>Text</p>
+                <p class="result" id="result-text"  aria-label="Contrast for text"></p>
+            </div>
+            <div class="headlines">
+                <p>Headlines</p>
+                <p class="result" id="result-headlines"  aria-label="Contrast for headlines"></p>
+            </div>
+            <div class="components">
+                <p>Components</p>
+                <p class="result" id="result-components"  aria-label="Contrast for components"></p>
+            </div>
+        </div>
+       
+        
+    </div>
+
+    
+
+    <script type="module" src="index.js"></script>
+    <script src="color-checker.js" charset="utf-8"></script>
+</body>
+</html>
